@@ -1,0 +1,10 @@
+[project]
+name = "pymatillion"
+version = "1.0.0"
+authors = [
+    {name = "Abhinav Tiwari", email = "abhinavtiwariusa84@gmail.com"},
+]
+requires-python = ">=3.8"
+dependencies = [
+    "requests"
+]
