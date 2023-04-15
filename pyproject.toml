@@ -18,7 +18,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["black", "isort"]
+dev = ["black", "bumpver", "isort"]
 
 [project.urls]
 Homepage = "https://github.com/tiwari-abhi/PyMatillion"
