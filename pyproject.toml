@@ -1,10 +1,41 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "pymatillion"
 version = "1.0.0"
 authors = [
     {name = "Abhinav Tiwari", email = "abhinavtiwariusa84@gmail.com"},
 ]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
 requires-python = ">=3.8"
 dependencies = [
-    "requests"
+    "requests",
 ]
+
+[project.optional-dependencies]
+dev = ["black", "isort"]
+
+[project.urls]
+Homepage = "https://github.com/tiwari-abhi/PyMatillion"
+Docs = "https://tiwari-abhi.github.io/PyMatillion/reference"
+
+[tool.bumpver]
+current_version = "1.0.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = [
+    'current_version = "{version}"',
+]
+
+[tool.setuptools]
+py-modules = ["pymatillion"]
