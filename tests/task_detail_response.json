@@ -1,0 +1,43 @@
+{
+  "id": 12345,
+  "type": "RUN_ORCHESTRATION",
+  "customerID": 793,
+  "groupName": "Sample_Project_Group_1",
+  "projectID": 795,
+  "projectName": "Sample_Project_1",
+  "versionID": 796,
+  "versionName": "default",
+  "jobID": 827,
+  "jobName": "Sample_Job_1",
+  "environmentID": 799,
+  "environmentName": "test",
+  "state": "SUCCESS",
+  "enqueuedTime": 1594729190954,
+  "startTime": 1594729190955,
+  "endTime": 1594729201024,
+  "message": null,
+  "originatorID": "ws_61498_7",
+  "rowCount": 0,
+  "tasks": [
+    {
+      "taskID": 1,
+      "parentID": -1,
+      "type": "VALIDATE_ORCHESTRATION",
+      "jobID": 827,
+      "jobName": "Sample_Job_1",
+      "jobRevision": 2,
+      "jobTimestamp": 1594714500345,
+      "componentID": 828,
+      "componentName": "Start 0",
+      "state": "SUCCESS",
+      "rowCount": -1,
+      "startTime": 1594729190956,
+      "endTime": 1594729190958,
+      "message": ""
+    }
+  ],
+  "hasHistoricJobs": true,
+  "jobNames": [
+    "Sample_Job_1"
+  ]
+}

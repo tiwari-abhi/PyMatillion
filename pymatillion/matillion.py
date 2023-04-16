@@ -2,8 +2,9 @@ import logging
 from typing import Dict, List, Any
 
 import requests
+from requests.exceptions import HTTPError
 
-from pymatillion.constants import (API_GET, API_POST, DEFAULT_VERSION, PROJECT_GROUP_NAME,
+from pymatillion.constants import (API_GET, API_POST, DEFAULT_VERSION, PROJECT_GROUP_NAME, BASE_URL, USERNAME, PASSWORD,
                                    PROJECT_NAME)
 
 logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ class MatillionClient:
         attributes_to_check = set(args)
         invalid_attributes = []
         for attr in attributes_to_check:
-            if getattr(self, attr) is None:
+            if (getattr(self, attr) is None) or (getattr(self, attr) == ''):
                 invalid_attributes.append(attr)
         if invalid_attributes:
             raise ValueError(f'Undefined attributes: {",".join(invalid_attributes)}')
@@ -95,6 +96,7 @@ class MatillionClient:
         Returns:
             Project Groups (list) : A list of strings with names of Project Groups.
         """
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD)
         return self._api_request(API_GET, "group").json()
 
     def list_projects(self) -> List[str]:
@@ -117,7 +119,7 @@ class MatillionClient:
 
         Args:
             project_name (str): Name of the Matillion project.
-            version (str): Version of the Matillion project.
+            version: (str), optional. Default value : default.
         Returns:
             Matillion Jobs (list): A list of of strings with names of the Matillion jobs.
         """
@@ -153,7 +155,7 @@ class MatillionClient:
             job_variables (dict): Dictionary of Matillion job variables.
             grid_variables (dict): Dictionary of Matillion grid variables.
             project_name (str): Name of the Matillion project.
-            version (str): Version of the Matillion project.
+            version: (str), optional. Default value : default.
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2475544#server-response
         """
@@ -208,7 +210,7 @@ class MatillionClient:
 
         Args:
             project_name (str): Name of the Matillion project.
-            version (str): Version of the Matillion project.
+            version: (str), optional. Default value : default.
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2949951#deleting-resources
         """
