@@ -1,8 +1,7 @@
 import logging
-from typing import Dict, List, Any
+from typing import Dict, List
 
 import requests
-from requests.exceptions import HTTPError
 
 from pymatillion.constants import (API_GET, API_POST, DEFAULT_VERSION, PROJECT_GROUP_NAME, BASE_URL, USERNAME, PASSWORD,
                                    PROJECT_NAME)
@@ -26,7 +25,7 @@ class MatillionClient:
         attributes_to_check = set(args)
         invalid_attributes = []
         for attr in attributes_to_check:
-            if (getattr(self, attr) is None) or (getattr(self, attr) == ''):
+            if (getattr(self, attr) is None) or (not getattr(self, attr)):
                 invalid_attributes.append(attr)
         if invalid_attributes:
             raise ValueError(f'Undefined attributes: {",".join(invalid_attributes)}')
@@ -106,7 +105,7 @@ class MatillionClient:
         Returns:
             Project Names (list) : A list of strings with names of Projects.
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME)
         return self._api_request(
             API_GET, "group", "name", self.project_group_name, "project"
         ).json()
@@ -123,8 +122,7 @@ class MatillionClient:
         Returns:
             Matillion Jobs (list): A list of of strings with names of the Matillion jobs.
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
-        self._ensure_attributes(PROJECT_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
         return self._api_request(
             API_GET,
             "group",
@@ -159,8 +157,7 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2475544#server-response
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
-        self._ensure_attributes(PROJECT_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
         body = {"scalarVariables": job_variables, "gridVariables": grid_variables}
         return self._api_request(
             API_POST,
@@ -189,8 +186,7 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2972278
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
-        self._ensure_attributes(PROJECT_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
         return self._api_request(
             API_GET,
             "group",
@@ -214,8 +210,7 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2949951#deleting-resources
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
-        self._ensure_attributes(PROJECT_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
         return self._api_request(
             API_POST,
             "group",
@@ -243,8 +238,7 @@ class MatillionClient:
         Returns:
             Dict[Any, Any] : Sample response can be found at https://documentation.matillion.com/docs/2949951#deleting-resources
         """
-        self._ensure_attributes(PROJECT_GROUP_NAME)
-        self._ensure_attributes(PROJECT_NAME)
+        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
         return self._api_request(
             API_POST,
             "group",
