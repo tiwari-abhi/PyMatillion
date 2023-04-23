@@ -1,0 +1,10 @@
+dist/*
+docs/*
+site/*
+venv/*
+tests/.pytest_cache
+*.egg-info
+mkdocs.yml
+pyproject.toml
+*.DS_Store
+.idea
