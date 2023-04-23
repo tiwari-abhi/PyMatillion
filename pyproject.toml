@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pymatillion"
 version = "1.0.0"
 description = "This is a Python wrapper for interacting with the REST API for Matillion."
+readme = "README.md"
 authors = [
     {name = "Abhinav Tiwari", email = "abhinavtiwariusa84@gmail.com"},
 ]
@@ -14,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Framework :: Matillion",
 ]
-requires-python = ">=3.8"
+requires-python = "==3.10"
 dependencies = [
     "requests",
 ]
