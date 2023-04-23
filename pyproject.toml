@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pymatillion"
 version = "1.0.0"
+description = "This is a Python wrapper for interacting with the REST API for Matillion."
 authors = [
     {name = "Abhinav Tiwari", email = "abhinavtiwariusa84@gmail.com"},
 ]
