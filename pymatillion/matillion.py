@@ -3,8 +3,16 @@ from typing import Dict, List
 
 import requests
 
-from pymatillion.constants import (API_GET, API_POST, DEFAULT_VERSION, PROJECT_GROUP_NAME, BASE_URL, USERNAME, PASSWORD,
-                                   PROJECT_NAME)
+from pymatillion.constants import (
+    API_GET,
+    API_POST,
+    BASE_URL,
+    DEFAULT_VERSION,
+    PASSWORD,
+    PROJECT_GROUP_NAME,
+    PROJECT_NAME,
+    USERNAME,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +43,9 @@ class MatillionClient:
     def _set_headers(self):
         self._headers = {"Content-Type": "application/json"}
 
-    def _api_request(self, http_method, *args, is_json=True, **kwargs) -> requests.Response:
+    def _api_request(
+        self, http_method, *args, is_json=True, **kwargs
+    ) -> requests.Response:
         """
         Make an API Request.
 
@@ -122,7 +132,9 @@ class MatillionClient:
         Returns:
             Matillion Jobs (list): A list of of strings with names of the Matillion jobs.
         """
-        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
+        self._ensure_attributes(
+            BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME
+        )
         return self._api_request(
             API_GET,
             "group",
@@ -157,7 +169,9 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2475544#server-response
         """
-        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
+        self._ensure_attributes(
+            BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME
+        )
         body = {"scalarVariables": job_variables, "gridVariables": grid_variables}
         return self._api_request(
             API_POST,
@@ -186,7 +200,9 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2972278
         """
-        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
+        self._ensure_attributes(
+            BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME
+        )
         return self._api_request(
             API_GET,
             "group",
@@ -210,7 +226,9 @@ class MatillionClient:
         Returns:
             dict : Sample response can be found at https://documentation.matillion.com/docs/2949951#deleting-resources
         """
-        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
+        self._ensure_attributes(
+            BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME
+        )
         return self._api_request(
             API_POST,
             "group",
@@ -238,7 +256,9 @@ class MatillionClient:
         Returns:
             Dict[Any, Any] : Sample response can be found at https://documentation.matillion.com/docs/2949951#deleting-resources
         """
-        self._ensure_attributes(BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME)
+        self._ensure_attributes(
+            BASE_URL, USERNAME, PASSWORD, PROJECT_GROUP_NAME, PROJECT_NAME
+        )
         return self._api_request(
             API_POST,
             "group",
