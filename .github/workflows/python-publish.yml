@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Publish ${package_name} to TestPyPI / GitHub
+name: Publish PyMatillion package to TestPyPI / GitHub Release
 
 on:
   pull_request:
