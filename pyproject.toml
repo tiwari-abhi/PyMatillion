@@ -27,7 +27,7 @@ Homepage = "https://github.com/tiwari-abhi/PyMatillion"
 Docs = "https://tiwari-abhi.github.io/PyMatillion/reference"
 
 [tool.bumpver]
-current_version = "1.0.4"
+current_version = "1.0.5"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
