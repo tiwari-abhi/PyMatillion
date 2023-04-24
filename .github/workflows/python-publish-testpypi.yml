@@ -24,7 +24,7 @@ jobs:
     
     steps:
       - name: Print GitHub Refs
-        run: echo "${{ github.ref }}"
+        run: echo '${{ github.ref }}'
 
       - name: Checkout source
         uses: actions/checkout@v3
