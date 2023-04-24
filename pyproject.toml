@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pymatillion"
-version = "1.0.3"
+dynamic = ['version']
 description = "This is a Python wrapper for interacting with the REST API for Matillion."
 readme = "README.md"
 authors = [
@@ -27,7 +27,7 @@ Homepage = "https://github.com/tiwari-abhi/PyMatillion"
 Docs = "https://tiwari-abhi.github.io/PyMatillion/reference"
 
 [tool.bumpver]
-current_version = "1.0.3"
+current_version = "1.0.7"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
