@@ -14,7 +14,7 @@ on:
       - closed
 
 permissions:
-  contents: read | write
+  contents: write-all
 
 jobs:
   build-n-publish:
