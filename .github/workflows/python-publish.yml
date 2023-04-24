@@ -13,6 +13,8 @@ on:
     types:
       - closed
 
+  workflow_dispatch:
+
 permissions:
   contents: write-all
 
