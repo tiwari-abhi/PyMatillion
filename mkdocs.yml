@@ -1,0 +1,10 @@
+site_name: PyMatillion
+
+plugins:
+  - mkdocstrings
+
+theme:
+  name: "material"
+
+nav:
+  - PyMatillion Reference Docs: reference.md
