@@ -1,5 +1,4 @@
 dist/*
-docs/*
 site/*
 venv/*
 tests/.pytest_cache
