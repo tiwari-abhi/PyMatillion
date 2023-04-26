@@ -33,7 +33,7 @@ jobs:
           pytest
 
   publish-docs:
-    name: Publish documentation using MkDocs
+    name: Publish docs
     runs-on: ubuntu-latest
     needs: run-formatter-and-test
 
@@ -49,11 +49,10 @@ jobs:
       - name: Install MkDocs
         run: python3 -m pip install mkdocs mkdocs-material
 
-      - name: Deploy MKdocs
+      - name: Deploy docs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cd PyMatillion
           mkdocs build
           mkdocs gh-deploy
 
