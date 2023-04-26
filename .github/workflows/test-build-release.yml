@@ -53,8 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          mkdocs build
-          mkdocs gh-deploy
+          mkdocs gh-deploy --force
 
   build-n-publish:
     name: Build and publish to PyPI
