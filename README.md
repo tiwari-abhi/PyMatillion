@@ -1,5 +1,10 @@
 # PyMatillion
 
+![CI](https://github.com/tiwari-abhi/PyMatillion/actions/workflows/test-build-release.yml/badge.svg)
+[![PyPI](https://img.shields.io/pypi/v/PyMatillion)](https://pypi.org/project/PyMatillion)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/PyMatillion.svg?label=downloads)](https://pypi.org/project/PyMatillion)
+[![Documentation Status](https://readthedocs.org/projects/pyairtable/badge/?version=latest)](http://pyairtable.readthedocs.io/en/latest/?badge=latest)
+
 This is a Python wrapper for interacting with the REST API for Matillion.
 
 For full documentation visit [Documentation Link](https://tiwari-abhi.github.io/PyMatillion/reference).
