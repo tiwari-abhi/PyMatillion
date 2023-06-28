@@ -10,12 +10,14 @@ readme = "README.md"
 authors = [
     {name = "Abhinav Tiwari", email = "abhinavtiwariusa84@gmail.com"},
 ]
+license = { file = "LICENSE" }
 classifiers = [
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Intended Audience :: Developers",
-
 ]
+keywords = ["Matillion", "ETL", "Python"]
 requires-python = ">=3.10"
 dependencies = [
     "requests",
@@ -43,4 +45,4 @@ push = true
 ]
 
 [tool.setuptools]
-py-modules = ["pymatillion"]
+packages = ["pymatillion"]
