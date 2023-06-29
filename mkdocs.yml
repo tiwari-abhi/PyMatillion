@@ -2,9 +2,14 @@ site_name: PyMatillion
 
 plugins:
   - mkdocstrings
+  - mkdocs-jupyter:
+      include: ['*.ipynb']
+      ignore_h1_titles: True
+      include_source: True
 
 theme:
-  name: "material"
+  name: material
 
 nav:
-  - PyMatillion Reference Docs: reference.md
+  - Reference Docs: reference.md
+  - Usage Examples: pymatillion_examples.ipynb

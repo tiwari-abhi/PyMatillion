@@ -21,6 +21,8 @@ keywords = ["Matillion", "ETL", "Python"]
 requires-python = ">=3.10"
 dependencies = [
     "requests",
+    "mkdocstrings",
+    "mkdocs-jupyter",
 ]
 
 [project.optional-dependencies]
